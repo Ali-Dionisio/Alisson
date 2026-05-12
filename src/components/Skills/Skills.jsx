@@ -1,6 +1,7 @@
 export default function Skills() {
   const techs = [
     "React",
+    "IA",
     "Node.js",
     "Express",
     "JavaScript",
