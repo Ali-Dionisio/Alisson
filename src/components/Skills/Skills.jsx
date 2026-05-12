@@ -1,3 +1,5 @@
+import "./Skills.css";
+
 export default function Skills() {
   const techs = [
     "React",
@@ -31,40 +33,28 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 mb-12">
-        <h2 className="text-3xl font-bold text-center text-slate-800">
-          Habilidades & Tecnologias
-        </h2>
+    <section id="skills" className="skills-section">
+      <div className="skills-title-container">
+        <h2 className="skills-title">Habilidades & Tecnologias</h2>
       </div>
 
       {/* Linha 1: Techs (Esquerda) */}
-      <div className="relative flex flex-col overflow-hidden pause-hover">
-        <div className="flex w-[200%] gap-8 animate-scroll">
+      <div className="carousel-wrapper">
+        <div className="carousel-track animate-scroll">
           {[...techs, ...techs].map((tech, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 bg-slate-50 border border-slate-100 px-8 py-4 rounded-2xl shadow-sm hover:border-blue-300 transition-colors"
-            >
-              <span className="text-slate-700 font-semibold text-lg">
-                {tech}
-              </span>
+            <div key={index} className="skill-card tech-card">
+              <span>{tech}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Linha 2: Soft Skills (Direita) - Adicionado mt-6 e animate-scroll-reverse */}
-      <div className="relative flex flex-col overflow-hidden pause-hover mt-6">
-        <div className="flex w-[200%] gap-8 animate-scroll-reverse">
+      {/* Linha 2: Soft Skills (Direita) */}
+      <div className="carousel-wrapper mt-6">
+        <div className="carousel-track animate-scroll-reverse">
           {[...softSkills, ...softSkills].map((skill, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 bg-blue-50/30 border border-blue-100 px-8 py-4 rounded-2xl shadow-sm hover:border-blue-300 transition-colors"
-            >
-              <span className="text-blue-900 font-semibold text-lg">
-                {skill}
-              </span>
+            <div key={index} className="skill-card soft-card">
+              <span>{skill}</span>
             </div>
           ))}
         </div>

@@ -1,0 +1,122 @@
+/* Container Principal do Header */
+.header-main {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px); /* backdrop-blur-lg */
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 50;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.5); /* border-slate-200/50 */
+}
+
+/* Navegação e Logo */
+.nav-container {
+  max-width: 72rem; /* max-w-6xl */
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 4rem; /* h-16 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-text {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700;
+  background: linear-gradient(to right, #2563eb, #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Menu Desktop */
+.nav-menu-desktop {
+  display: none;
+  gap: 2rem; /* space-x-8 */
+}
+
+.nav-link {
+  color: #4b5563; /* text-gray-600 */
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #2563eb; /* hover:text-blue-600 */
+}
+
+@media (min-width: 768px) {
+  .nav-menu-desktop {
+    display: flex;
+  }
+}
+
+/* Botão de Menu Mobile */
+.mobile-toggle-btn {
+  display: block;
+  padding: 0.5rem;
+  color: #4b5563;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .mobile-toggle-btn {
+    display: none;
+  }
+}
+
+/* Menu Lateral (Overlay) Mobile */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #ffffff;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Classes de Estado do Menu */
+.menu-open {
+  transform: translateX(0);
+}
+
+.menu-closed {
+  transform: translateX(100%);
+}
+
+.mobile-close-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.mobile-close-btn {
+  background: none;
+  border: none;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.mobile-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 2.5rem; /* space-y-10 */
+}
+
+.mobile-link {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700;
+  color: #111827; /* text-gray-900 */
+  text-decoration: none;
+  letter-spacing: -0.025em; /* tracking-tight */
+}

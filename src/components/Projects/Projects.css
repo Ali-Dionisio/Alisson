@@ -1,0 +1,233 @@
+/* Container da Seção */
+.projects-section {
+  padding: 5rem 0; /* py-20 */
+  background-color: #f8fafc; /* bg-slate-50 */
+}
+
+.projects-container {
+  max-width: 72rem; /* max-w-6xl */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Títulos */
+.section-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700;
+  text-align: center;
+  color: #1e293b; /* text-slate-800 */
+  margin-bottom: 4rem; /* mb-16 */
+}
+
+.subtitle-professional {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700;
+  color: #2563eb; /* text-blue-600 */
+  text-transform: uppercase;
+  letter-spacing: 0.1em; /* tracking-widest */
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .subtitle-professional { text-align: left; }
+}
+
+/* CARD DE DESTAQUE (HORIZONTAL) */
+.featured-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.5rem; /* rounded-3xl */
+  overflow: hidden;
+  margin-bottom: 4rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.featured-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* shadow-xl */
+}
+
+@media (min-width: 768px) {
+  .featured-card { flex-direction: row; }
+}
+
+.featured-image-box {
+  overflow: hidden;
+  height: 16rem; /* h-64 */
+}
+
+@media (min-width: 768px) {
+  .featured-image-box { width: 50%; height: auto; }
+}
+
+.featured-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.featured-card:hover .featured-image-box img {
+  transform: scale(1.05);
+}
+
+.featured-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .featured-content { width: 50%; }
+}
+
+/* Tags de Tecnologia */
+.tech-tag {
+  padding: 0.25rem 0.75rem;
+  background-color: #eff6ff; /* bg-blue-50 */
+  color: #1d4ed8; /* text-blue-700 */
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* GRID DE PROJETOS ACADÊMICOS */
+.academic-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .academic-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.academic-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.academic-card:hover {
+  border-color: #93c5fd; /* hover:border-blue-300 */
+  transform: translateY(-0.5rem); /* hover:-translate-y-2 */
+}
+
+.academic-img-box {
+  height: 10rem; /* h-40 */
+  overflow: hidden;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.academic-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.academic-card:hover .academic-img-box img {
+  transform: scale(1.1);
+}
+
+.academic-info {
+  padding: 1.5rem;
+}
+
+.academic-tech-tag {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8; /* text-slate-400 */
+  border: 1px solid #e2e8f0;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+}
+/* Utilitários de Lista de Techs */
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Header e Títulos do Card Destaque */
+.featured-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.featured-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.featured-desc {
+  color: #475569;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.external-icon {
+  color: #2563eb;
+  transition: transform 0.2s;
+}
+
+.external-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Seção Acadêmica */
+.subtitle-academic {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .subtitle-academic { text-align: left; }
+}
+
+.academic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.academic-title {
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.academic-desc {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.academic-icon {
+  color: #94a3b8;
+  transition: color 0.2s;
+}
+
+.academic-icon:hover {
+  color: #2563eb;
+}

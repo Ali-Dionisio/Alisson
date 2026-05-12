@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import "./Header.css";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,21 +13,17 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-white/70 backdrop-blur-lg z-50 border-b border-slate-200/50">
-      <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <header className="header-main">
+      <nav className="nav-container">
         {/* Logo */}
-        <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+        <span className="logo-text">
           Alisson.dev
         </span>
 
         {/* Menu Desktop */}
-        <div className="hidden md:flex space-x-8 text-gray-600 font-medium">
+        <div className="nav-menu-desktop">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="hover:text-blue-600 transition-colors"
-            >
+            <a key={link.name} href={link.href} className="nav-link">
               {link.name}
             </a>
           ))}
@@ -34,7 +31,7 @@ export default function Header() {
 
         {/* Botão Mobile */}
         <button
-          className="md:hidden p-2 text-gray-600"
+          className="mobile-toggle-btn"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -42,34 +39,22 @@ export default function Header() {
       </nav>
 
       {/* Menu Lateral/Overlay Mobile */}
-      <div
-        className={`
-          fixed inset-0 
-          bg-white           
-          z-[100]            
-          w-full 
-          h-screen
-          md:hidden
-          flex flex-col
-          transform transition-transform duration-300 md:hidden
-          ${isOpen ? "translate-x-0" : "translate-x-full"}
-        `}
-      >
-        {/* Área do topo para o botão fechar */}
-        <div className="flex justify-end p-6">
-          <button onClick={() => setIsOpen(false)} className="text-gray-600">
+      <div className={`mobile-overlay ${isOpen ? "menu-open" : "menu-closed"}`}>
+        {/* Botão fechar */}
+        <div className="mobile-close-container">
+          <button onClick={() => setIsOpen(false)} className="mobile-close-btn">
             <X size={32} />
           </button>
         </div>
 
-        {/* Links com fundo isolado */}
-        <div className="flex flex-col items-center justify-center flex-1 space-y-10">
+        {/* Links Mobile */}
+        <div className="mobile-links-container">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-3xl font-bold text-gray-900 tracking-tight"
+              className="mobile-link"
             >
               {link.name}
             </a>

@@ -1,0 +1,100 @@
+/* Container da Seção */
+.skills-section {
+  padding: 5rem 0; /* py-20 */
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.skills-title-container {
+  max-width: 72rem; /* max-w-6xl */
+  margin: 0 auto 3rem auto; /* mb-12 */
+  padding: 0 1rem;
+}
+
+.skills-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700;
+  text-align: center;
+  color: #1e293b; /* text-slate-800 */
+}
+
+/* Estrutura do Carrossel */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content; /* Garante que o conteúdo não quebre */
+  gap: 2rem; /* gap-8 */
+}
+
+/* Itens das Skills */
+.skill-card {
+  flex-shrink: 0;
+  padding: 1rem 2rem; /* py-4 px-8 */
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s;
+  border: 1px solid;
+}
+
+.tech-card {
+  background-color: #f8fafc; /* bg-slate-50 */
+  border-color: #f1f5f9; /* border-slate-100 */
+}
+
+.tech-card span {
+  color: #334155; /* text-slate-700 */
+  font-weight: 600;
+  font-size: 1.125rem; /* text-lg */
+}
+
+.soft-card {
+  background-color: rgba(239, 246, 255, 0.3); /* bg-blue-50/30 */
+  border-color: #dbeafe; /* border-blue-100 */
+}
+
+.soft-card span {
+  color: #1e3a8a; /* text-blue-900 */
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.skill-card:hover {
+  border-color: #93c5fd; /* hover:border-blue-300 */
+}
+
+/* ANIMAÇÕES */
+
+/* Pausar ao passar o mouse */
+.carousel-wrapper:hover .animate-scroll,
+.carousel-wrapper:hover .animate-scroll-reverse {
+  animation-play-state: paused;
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 40s linear infinite;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
