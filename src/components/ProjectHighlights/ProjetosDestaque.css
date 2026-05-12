@@ -1,0 +1,75 @@
+/* Container que limita a visualização (Máscara) */
+.projetos-vitrine {
+  height: 550px; /* Altura fixa para caber uns 2 cards ou 1 e meio */
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 4rem;
+  border-radius: var(--radius-xl);
+  /* Degradê suave no topo e base para dar efeito de sumiço */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+/* O trilho que se move */
+.projetos-trilho {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: rolarVertical 10s linear infinite;
+}
+
+/* Pausa ao colocar o mouse */
+.projetos-vitrine:hover .projetos-trilho {
+  animation-play-state: paused;
+}
+
+/* Estilos individuais dos cards (Ajuste para o scroll) */
+.featured-card {
+  flex-shrink: 0; /* Impede que o card esmague */
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast);
+}
+
+@media (min-width: 768px) {
+  .featured-card {
+    flex-direction: row;
+    min-height: 250px;
+  }
+}
+
+/* Animação Vertical */
+@keyframes rolarVertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    /* Move metade da altura total do trilho */
+    transform: translateY(-50%);
+  }
+}
+
+/* Ajuste das Imagens no Scroll */
+.featured-image-box {
+  height: 200px;
+}
+
+@media (min-width: 768px) {
+  .featured-image-box {
+    width: 40%;
+    height: auto;
+  }
+  .featured-content {
+    width: 60%;
+  }
+}

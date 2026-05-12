@@ -1,12 +1,12 @@
 /* Container da Seção */
 .skills-section {
   padding: 5rem 0; /* py-20 */
-  background-color: #ffffff;
+  background-color: var(--bg-primary);
   overflow: hidden;
 }
 
 .skills-title-container {
-  max-width: 72rem; /* max-w-6xl */
+  max-width: var(--container-max);
   margin: 0 auto 3rem auto; /* mb-12 */
   padding: 0 1rem;
 }
@@ -15,7 +15,7 @@
   font-size: 1.875rem; /* text-3xl */
   font-weight: 700;
   text-align: center;
-  color: #1e293b; /* text-slate-800 */
+  color: var(--text-title);
 }
 
 /* Estrutura do Carrossel */
@@ -29,7 +29,7 @@
 
 .carousel-track {
   display: flex;
-  width: max-content; /* Garante que o conteúdo não quebre */
+  width: max-content;
   gap: 2rem; /* gap-8 */
 }
 
@@ -37,36 +37,36 @@
 .skill-card {
   flex-shrink: 0;
   padding: 1rem 2rem; /* py-4 px-8 */
-  border-radius: 1rem; /* rounded-2xl */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: border-color 0.2s;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast);
   border: 1px solid;
 }
 
 .tech-card {
-  background-color: #f8fafc; /* bg-slate-50 */
-  border-color: #f1f5f9; /* border-slate-100 */
+  background-color: var(--bg-secondary);
+  border-color: var(--border-light);
 }
 
 .tech-card span {
-  color: #334155; /* text-slate-700 */
+  color: var(--text-body);
   font-weight: 600;
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.125rem;
 }
 
 .soft-card {
-  background-color: rgba(239, 246, 255, 0.3); /* bg-blue-50/30 */
-  border-color: #dbeafe; /* border-blue-100 */
+  background-color: var(--bg-accent);
+  border-color: var(--border-soft);
 }
 
 .soft-card span {
-  color: #1e3a8a; /* text-blue-900 */
+  color: var(--text-soft);
   font-weight: 600;
   font-size: 1.125rem;
 }
 
 .skill-card:hover {
-  border-color: #93c5fd; /* hover:border-blue-300 */
+  border-color: var(--accent-color);
 }
 
 /* ANIMAÇÕES */
@@ -78,11 +78,11 @@
 }
 
 .animate-scroll {
-  animation: scroll 40s linear infinite;
+  animation: scroll var(--anim-speed) linear infinite;
 }
 
 .animate-scroll-reverse {
-  animation: scroll-reverse 40s linear infinite;
+  animation: scroll-reverse var(--anim-speed) linear infinite;
 }
 
 .mt-6 {

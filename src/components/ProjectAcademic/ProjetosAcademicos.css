@@ -1,0 +1,79 @@
+/* Container que limita a área de visão */
+.academic-vitrine-horizontal {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem 0;
+  /* Efeito de desfoque nas laterais para suavizar a entrada/saída */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}
+
+/* O trilho que move os cards lateralmente */
+.academic-trilho-horizontal {
+  display: flex;
+  gap: 2rem;
+  width: max-content; /* Importante para não quebrar a linha */
+  animation: rolarLateral 40s linear infinite;
+}
+
+/* Pausa ao passar o mouse */
+.academic-vitrine-horizontal:hover .academic-trilho-horizontal {
+  animation-play-state: paused;
+}
+
+/* Ajuste do Card para o Scroll Horizontal */
+.academic-card-horizontal {
+  width: 300px; /* Largura fixa para manter o padrão no scroll */
+  flex-shrink: 0;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.academic-card-horizontal:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.academic-img-box {
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.academic-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animação de Movimento Lateral */
+@keyframes rolarLateral {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Move até a metade (fim da primeira lista duplicada) */
+    transform: translateX(-50%);
+  }
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+  .academic-card-horizontal {
+    width: 260px; /* Cards um pouco menores em telas pequenas */
+  }
+  .academic-trilho-horizontal {
+    animation-duration: 25s; /* Um pouco mais rápido no mobile pelo percurso ser menor */
+  }
+}

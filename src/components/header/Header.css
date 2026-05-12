@@ -3,16 +3,16 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: var(--header-bg, rgba(255, 255, 255, 0.7));;
   backdrop-filter: blur(20px); /* backdrop-blur-lg */
   -webkit-backdrop-filter: blur(16px);
   z-index: 50;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.5); /* border-slate-200/50 */
+  border-bottom: 1px solid var(--border-light); /* Utilizando a variável central */
 }
 
 /* Navegação e Logo */
 .nav-container {
-  max-width: 72rem; /* max-w-6xl */
+  max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 1rem;
   height: 4rem; /* h-16 */
@@ -24,7 +24,8 @@
 .logo-text {
   font-size: 1.25rem; /* text-xl */
   font-weight: 700;
-  background: linear-gradient(to right, #2563eb, #06b6d4);
+  /* Gradiente mantido para destaque da marca */
+  background: linear-gradient(to right, var(--primary-color), #06b6d4);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -37,14 +38,14 @@
 }
 
 .nav-link {
-  color: #4b5563; /* text-gray-600 */
+  color: var(--text-body);
   font-weight: 500;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color var(--transition-fast);
 }
 
 .nav-link:hover {
-  color: #2563eb; /* hover:text-blue-600 */
+  color: var(--primary-color);
 }
 
 @media (min-width: 768px) {
@@ -57,7 +58,7 @@
 .mobile-toggle-btn {
   display: block;
   padding: 0.5rem;
-  color: #4b5563;
+  color: var(--text-body);
   background: none;
   border: none;
   cursor: pointer;
@@ -73,13 +74,13 @@
 .mobile-overlay {
   position: fixed;
   inset: 0;
-  background-color: #ffffff;
+  background-color: var(--bg-primary);
   z-index: 100;
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease-in-out;
+  transition: transform var(--transition-slow);
 }
 
 /* Classes de Estado do Menu */
@@ -100,7 +101,7 @@
 .mobile-close-btn {
   background: none;
   border: none;
-  color: #4b5563;
+  color: var(--text-body);
   cursor: pointer;
 }
 
@@ -116,7 +117,12 @@
 .mobile-link {
   font-size: 1.875rem; /* text-3xl */
   font-weight: 700;
-  color: #111827; /* text-gray-900 */
+  color: var(--text-dark);
   text-decoration: none;
   letter-spacing: -0.025em; /* tracking-tight */
+  transition: color var(--transition-fast);
+}
+
+.mobile-link:hover {
+  color: var(--primary-color);
 }

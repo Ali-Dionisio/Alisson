@@ -1,15 +1,15 @@
 /* Container Principal */
 .footer-container {
-  background-color: #0f172a; /* bg-slate-900 */
-  color: #ffffff; /* text-white */
+  background-color: var(--text-dark, #0f172a); /* bg-slate-900 */
+  color: #ffffff; /* Mantido branco para contraste no fundo escuro */
   padding: 4rem 1rem; /* py-16 px-4 */
-  border-top: 1px solid #1e293b; /* border-t border-slate-800 */
+  border-top: 1px solid var(--text-title, #1e293b); /* border-t border-slate-800 */
 }
 
 /* Limitador de largura e Alinhamento */
 .footer-content {
-  max-width: 72rem; /* max-w-6xl */
-  margin: 0 auto; /* mx-auto */
+  max-width: var(--container-max);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -34,16 +34,17 @@
 
 .footer-title {
   font-size: 1.875rem; /* text-3xl */
-  font-weight: 700; /* font-bold */
+  font-weight: 700;
   margin-bottom: 0.75rem; /* mb-3 */
-  background: linear-gradient(to right, #60a5fa, #22d3ee); /* from-blue-400 to-cyan-400 */
+  /* Gradiente atualizado para cores da marca */
+  background: linear-gradient(to right, var(--accent-color), #22d3ee);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .footer-description {
-  color: #94a3b8; /* text-slate-400 */
+  color: var(--text-light, #94a3b8);
   font-size: 1.125rem; /* text-lg */
   max-width: 24rem; /* max-w-sm */
 }
@@ -56,9 +57,9 @@
 
 .social-icon-btn {
   padding: 0.75rem; /* p-3 */
-  background-color: #1e293b; /* bg-slate-800 */
-  border-radius: 0.75rem; /* rounded-xl */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* transition-all duration-300 */
+  background-color: var(--bg-social-btn);
+  border-radius: var(--radius-md, 0.75rem);
+  transition: all var(--transition-slow, 0.3s cubic-bezier(0.4, 0, 0.2, 1));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,30 +68,30 @@
 }
 
 .social-icon-btn:hover {
-  background-color: #2563eb; /* hover:bg-blue-600 */
-  transform: translateY(-0.25rem); /* hover:-translate-y-1 */
+  background-color: var(--primary-color);
+  transform: translateY(-0.25rem);
 }
 
 .social-icon-btn svg {
   width: 1.5rem; /* w-6 */
   height: 1.5rem; /* h-6 */
-  transition: color 0.2s;
+  transition: color var(--transition-fast);
 }
 
 /* Linha de Copyright */
 .footer-bottom {
-  max-width: 72rem;
+  max-width: var(--container-max);
   margin: 3rem auto 0 auto; /* mt-12 */
   padding-top: 2rem; /* pt-8 */
-  border-top: 1px solid rgba(30, 41, 59, 0.5); /* border-t border-slate-800/50 */
+  border-top: 1px solid rgba(30, 41, 59, 0.5); /* Mantido overlay leve */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 1rem; /* gap-4 */
-  color: #64748b; /* text-slate-500 */
+  color: var(--text-muted);
   font-size: 0.875rem; /* text-sm */
-  font-weight: 500; /* font-medium */
+  font-weight: 500;
 }
 
 @media (min-width: 768px) {
@@ -100,5 +101,5 @@
 }
 
 .heart-icon {
-  color: #ef4444; /* text-red-500 */
+  color: #ef4444; /* Cor de destaque fixa para o ícone de coração */
 }

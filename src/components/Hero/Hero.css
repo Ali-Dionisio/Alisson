@@ -4,11 +4,15 @@
   padding-bottom: 4rem; /* pb-16 */
   padding-left: 1rem;
   padding-right: 1rem;
+  background-color: var(--bg-primary);
+}
+.hero-container h1{
+  color: var(--text-title);
 }
 
 /* Limitador e Alinhamento */
 .hero-container {
-  max-width: 72rem; /* max-w-6xl */
+  max-width: var(--container-max);
   margin: 0 auto;
   text-align: center;
 }
@@ -17,13 +21,13 @@
 .hero-title {
   font-size: 3rem; /* text-5xl */
   font-weight: 800; /* font-extrabold */
-  color: #111827; /* text-gray-900 */
+  color: var(--text-dark, #0f172a);
   margin-bottom: 1.5rem; /* mb-6 */
   line-height: 1.2;
 }
 
 .hero-title-name {
-  color: #2563eb; /* text-blue-600 */
+  color: var(--primary-color);
 }
 
 /* Ajuste de tamanho para Desktop */
@@ -36,7 +40,7 @@
 /* Texto de Descrição */
 .hero-description {
   font-size: 1.25rem; /* text-xl */
-  color: #4b5563; /* text-gray-600 */
+  color: var(--text-body);
   max-width: 42rem; /* max-w-2xl */
   margin: 0 auto 2rem auto; /* mx-auto mb-8 */
 }
@@ -51,28 +55,30 @@
 /* Estilo Base dos Botões */
 .btn-base {
   padding: 0.75rem 2rem; /* py-3 px-8 */
-  border-radius: 9999px; /* rounded-full */
+  border-radius: var(--radius-full);
   font-weight: 600; /* font-semibold */
   text-decoration: none;
-  transition: all 0.2s ease; /* transition */
+  transition: all var(--transition-fast);
 }
 
 /* Botão Primário (Projetos) */
 .btn-primary {
-  background-color: #2563eb; /* bg-blue-600 */
+  background-color: var(--primary-color);
   color: #ffffff;
 }
 
 .btn-primary:hover {
-  background-color: #1d4ed8; /* hover:bg-blue-700 */
+  background-color: var(--primary-blue-hover, #1d4ed8);
+  transform: translateY(-2px); /* Adicionado um pequeno charme no hover */
 }
 
 /* Botão Secundário (Contato) */
 .btn-secondary {
-  border: 1px solid #d1d5db; /* border-gray-300 */
-  color: #111827;
+  border: 1px solid var(--border-default);
+  color: var(--text-title);
 }
 
 .btn-secondary:hover {
-  background-color: #f9fafb; /* hover:bg-gray-50 */
+  background-color: var(--bg-secondary);
+  border-color: var(--accent-color);
 }

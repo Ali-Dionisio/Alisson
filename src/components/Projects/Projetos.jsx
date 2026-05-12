@@ -1,5 +1,5 @@
-import ProjetosDestaque from "./ProjetosDestaque";
-import ProjetosAcademicos from "./ProjetosAcademicos";
+import ProjetosDestaque from "../ProjectHighlights/ProjetosDestaque";
+import ProjetosAcademicos from "../ProjectAcademic/ProjetosAcademicos";
 import "./Projects.css";
 
 export default function Projetos() {
@@ -9,7 +9,7 @@ export default function Projetos() {
       title: "Askarip",
       link: "https://www.askarip.com.br/",
       img: "/askarip.png",
-      desc: "Projeto real focado em soluções de backend. Atuei no desenvolvimento da arquitetura de dados e integração de APIs.",
+      desc: "Solução corporativa robusta onde atuei como arquiteto de dados e desenvolvedor backend e frontend. Projetei a estrutura do banco de dados e a integração de APIs críticas, transformando requisitos complexos em uma plataforma estável, segura e pronta para escala.",
       techs: ["React.js", "Node.js", "Express", "API REST", "MySQL"]
     },
     {
@@ -17,7 +17,7 @@ export default function Projetos() {
       title: "Zellene",
       link: "https://zellene.com.br/",
       img: "/zellene.png",
-      desc: "E-commerce de alto impacto com integração InfinitePay, área do cliente e dashboard administrativo estratégico.",
+      desc: "E-commerce full-stack focado em conversão e segurança. Implementação de fluxos de pagamento via webhooks, integração robusta com APIs financeiras e desenvolvimento de um painel de controle para gestão de inventário e logs de transação.",
       techs: ["React.js", "Node.js", "Express", "API REST", "PostgreSQL"]
     },
     {
